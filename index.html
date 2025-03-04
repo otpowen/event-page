@@ -17,7 +17,7 @@
     
     /* 상단 링크 네비게이션 */
     .top-links {
-      background: transparent; /* 수정된 부분 */
+      background: transparent;
       padding: 10px 0;
       text-align: center;
     }
@@ -37,10 +37,9 @@
     }
     .top-links a img {
       width: 40px;
-      height: 40px; /* 기본 아이콘 크기 */
+      height: 40px;
       vertical-align: middle;
     }
-    /* 공식 사이트 아이콘만 크기 조절 (첫 번째 항목) */
     .top-links ul li:first-child img {
       width: 30px;
       height: 30px;
@@ -54,6 +53,7 @@
       opacity: 0.8;
     }
     
+    /* fade-in 효과 */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -125,7 +125,7 @@
       margin-top: 10px;
     }
     
-    /* 경품 안내 섹션 ("봄 비행기 태워 Dream!") */
+    /* 경품 안내 섹션 */
     .prize-info {
       position: relative;
       background: url('images/section_background.png') no-repeat center center/cover;
@@ -198,7 +198,7 @@
       line-height: 1.4;
     }
     
-    /* 안내 박스 텍스트만 (참가대상, 이벤트 기간, 불가 대상) */
+    /* 안내 박스 텍스트 */
     .info-container {
       background: none;
       box-shadow: none;
@@ -206,7 +206,7 @@
       margin: 20px auto 0;
       color: #fff;
       font-weight: normal;
-      text-align: center; /* 가운데 정렬 */
+      text-align: center;
     }
     .info-list {
       list-style: none;
@@ -225,7 +225,7 @@
       color: #fff;
     }
     
-    /* 추가 섹션: 투자 지원금 혜택, 이벤트 접수하기, 신년 지원금 이벤트 등 */
+    /* 추가 섹션 */
     .additional-sections {
       position: relative;
       background: #222;
@@ -272,7 +272,6 @@
       position: relative;
       z-index: 1;
     }
-    /* 가로 정렬: 4개의 stat-box가 한 행에 나열 */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -312,7 +311,7 @@
       color: #aaa;
     }
     
-    /* 좌우 배치 섹션: 투자 지원금 혜택 + 이벤트 접수하기 */
+    /* 좌우 배치 섹션 */
     .side-by-side {
       display: flex;
       flex-wrap: wrap;
@@ -407,7 +406,7 @@
     .registration-form button:hover {
       background: #ff2e2e;
     }
-    /* 진행중인 외환상품 섹션 - 높이를 줄이기 위해 패딩과 마진을 줄임 */
+    /* 진행중인 외환상품 섹션 */
     .ongoing-forex {
       background: #222;
       padding: 20px 20px;
@@ -441,7 +440,7 @@
     }
     .forex-card img {
       width: 100%;
-      height: 150px; /* 모든 이미지 높이를 150px로 통일 */
+      height: 150px;
       object-fit: cover;
     }
     .forex-card .card-body {
@@ -523,7 +522,7 @@
       line-height: 1.6;
     }
     
-    /* 카카오톡 버튼 */
+    /* 카카오톡 버튼: 항상 보이도록 fade-in 제거 */
     .kakao-button {
       position: fixed;
       bottom: 20px;
@@ -537,7 +536,9 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      z-index: 1000;
+      z-index: 9999;
+      opacity: 1;
+      transform: none;
     }
     .kakao-button img {
       width: 60%;
@@ -549,6 +550,21 @@
       .top-links ul {
         flex-direction: column;
         gap: 10px;
+      }
+      .top-links {
+        position: relative;
+      }
+      .top-links::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, rgba(0,255,0,0.3), transparent 70%);
+        pointer-events: none;
+        animation: aurora 8s infinite alternate;
+        z-index: -1;
       }
       .hero-content h1 {
         font-size: 36px;
@@ -568,7 +584,6 @@
         gap: 10px;
       }
       .info-container {
-        /* 반응형에서도 동일하게 적용 */
         background: none;
         box-shadow: none;
         padding: 0;
@@ -600,7 +615,6 @@
       .investment-info h2 {
         font-size: 24px;
       }
-      /* 모바일에서 박스 크기를 일정하게 */
       .prize-card,
       .investment-info,
       .registration-form,
@@ -610,7 +624,6 @@
         margin-left: auto;
         margin-right: auto;
       }
-      /* 모바일 전용 이벤트 접수하기 박스 표시 */
       .mobile-only {
         display: block;
         max-width: 600px;
@@ -625,7 +638,7 @@
   </style>
 </head>
 <body>
-  <!-- 상단 배너 (Hero Section) -->
+  <!-- 상단 배너 -->
   <div class="hero">
     <div class="currency-container"></div>
     <div class="hero-content">
@@ -634,7 +647,7 @@
     </div>
   </div>
   
-  <!-- 상단 네비게이션 (배너 아래에 위치) -->
+  <!-- 상단 네비게이션 -->
   <header class="top-links">
     <ul>
       <li>
@@ -670,7 +683,7 @@
     </ul>
   </header>
   
-  <!-- 경품 안내 섹션 ("봄 비행기 태워 Dream!") -->
+  <!-- 경품 안내 섹션 -->
   <div class="prize-info fade-in">
     <h2>봄 비행기 태워 Dream!</h2>
     <ul class="prize-list">
@@ -691,7 +704,6 @@
         <div class="prize-desc">스타벅스 2만원<br>교환권 (100명)</div>
       </li>
     </ul>
-    <!-- 안내 박스 텍스트만 표시 (가운데 정렬) -->
     <div class="info-container fade-in">
       <ul class="info-list">
         <li><strong>참가 대상</strong> 이벤트 참여자 및 기존 가입자 대상</li>
@@ -739,7 +751,7 @@
     </div>
   </div>
   
-  <!-- 추가 섹션: 좌우 배치 (투자 지원금 혜택 + 이벤트 접수하기, 신년 지원금 이벤트 등) -->
+  <!-- 추가 섹션 -->
   <div class="additional-sections fade-in">
     <div class="side-by-side">
       <div class="investment-info">
@@ -782,7 +794,7 @@
       </div>
     </div>
     
-    <!-- 진행중인 외환상품 섹션 (높이 줄임) -->
+    <!-- 진행중인 외환상품 섹션 -->
     <div class="ongoing-forex">
       <h2>🎊 신년 지원금 이벤트를 놓치신 분들을 위한</h2>
       <p class="subtitle"><strong>2월 앵콜 소망이벤트</strong><br>이번엔 놓치지 마시고 꼭 챙겨가세요!</p>
@@ -896,9 +908,9 @@
     </div>
   </footer>
   
-  <!-- 카카오톡 버튼 -->
-  <a href="https://pf.kakao.com/" target="_blank" class="kakao-button fade-in">
-    <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalk_logo.png" alt="카카오톡">
+  <!-- 카카오톡 버튼 (항상 보임) -->
+  <a href="https://pf.kakao.com/" target="_blank" class="kakao-button">
+    <img src="icon/kakao.png" alt="카카오톡">
   </a>
   
   <script>
