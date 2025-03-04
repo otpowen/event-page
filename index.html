@@ -37,7 +37,7 @@
     }
     .top-links a img {
       width: 40px;
-      height: auto;
+      height: 40px; /* 아이콘 이미지의 높이도 고정 */
       vertical-align: middle;
     }
     .top-links a span {
@@ -118,18 +118,6 @@
     .hero-content p {
       font-size: 24px;
       margin-top: 10px;
-    }
-    .hero-profile {
-      position: absolute;
-      top: 50%;
-      right: 100px;
-      transform: translateY(-50%);
-      z-index: 5;
-    }
-    .hero-profile img {
-      width: 250px;
-      border: none;
-      border-radius: 0;
     }
     .hero-scoreboard {
       position: absolute;
@@ -277,7 +265,7 @@
       z-index: 1;
     }
     
-    /* Stats 섹션 (하단 배경에 오로라 효과 적용) */
+    /* Stats 섹션 */
     .stats-section {
       position: relative;
       background: #222;
@@ -300,9 +288,10 @@
       position: relative;
       z-index: 1;
     }
+    /* 가로 정렬: 4개의 stat-box가 한 행에 나열 */
     .stats-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       max-width: 1200px;
       margin: 0 auto;
@@ -325,15 +314,7 @@
       width: 36px;
       height: 36px;
     }
-    .stats-container .stat-box:nth-child(2) .icon-wrapper {
-      width: 80px;
-      height: 80px;
-    }
-    .stats-container .stat-box:nth-child(2) .icon-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    /* 기존 누적 고객에 적용된 특별한 크기 조정을 제거 */
     .stat-value {
       font-size: 24px;
       font-weight: bold;
@@ -594,13 +575,6 @@
       .hero-content p {
         font-size: 18px;
       }
-      .hero-profile {
-        position: static;
-        margin-top: 20px;
-      }
-      .hero-profile img {
-        width: 150px;
-      }
       .hero-scoreboard {
         font-size: 18px;
         padding: 8px 16px;
@@ -649,6 +623,17 @@
         margin-left: auto;
         margin-right: auto;
       }
+      /* 모바일 전용 이벤트 접수하기 박스 표시 */
+      .mobile-only {
+        display: block;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+    }
+    
+    /* 기본적으로 모바일 전용 박스는 숨김 */
+    .mobile-only {
+      display: none;
     }
   </style>
 </head>
@@ -660,10 +645,7 @@
       <h1>글로벌 외환투자의 혁신 가입자 대상 봄맞이 이벤트</h1>
       <p>외환투자, 처음이라 어려우신가요? 회원가입하고 상품도 받아가세요!</p>
     </div>
-    <!-- 트로피 이미지 (우측 상단) -->
-    <div class="hero-profile">
-      <img src="images/trop.png" alt="내 프로필 이미지">
-    </div>
+    <!-- 트로피 이미지 제거됨 -->
     <!-- 이벤트 참여 인원 박스 -->
     <div class="hero-scoreboard">이벤트 참여 인원: <span class="rolling-number">55</span>명</div>
   </div>
@@ -735,7 +717,7 @@
     </div>
   </div>
   
-  <!-- Stats 섹션 (하단 배경에 오로라 효과 적용) -->
+  <!-- Stats 섹션 -->
   <div class="stats-section fade-in">
     <div class="stats-container">
       <div class="stat-box">
@@ -744,14 +726,6 @@
         </div>
         <div class="stat-value">36개국</div>
         <div class="stat-label">거래 외화</div>
-        <div class="stat-date">(2025. 01 기준)</div>
-      </div>
-      <div class="stat-box">
-        <div class="icon-wrapper">
-          <img src="icon/invest.png" alt="투자 성과 아이콘">
-        </div>
-        <div class="stat-value">1697억원</div>
-        <div class="stat-label">투자 성과</div>
         <div class="stat-date">(2025. 01 기준)</div>
       </div>
       <div class="stat-box">
@@ -886,6 +860,21 @@
         현재 <span class="rolling-number">55</span>명 상담 접수중
       </div>
     </div>
+  </div>
+  
+  <!-- 모바일 전용 이벤트 접수하기 박스 -->
+  <div class="registration-form mobile-only fade-in">
+    <h2>이벤트 접수하기</h2>
+    <form>
+      <input type="text" name="name" placeholder="성함" required>
+      <input type="tel" name="phone" placeholder="전화번호" required>
+      <input type="number" name="age" placeholder="나이" required>
+      <div class="consent">
+        <input type="checkbox" id="consent_mobile" name="consent" required>
+        <label for="consent_mobile">개인정보수집동의</label>
+      </div>
+      <button type="submit">접수하기</button>
+    </form>
   </div>
   
   <!-- 로고 슬라이드 섹션 -->
