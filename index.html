@@ -424,10 +424,11 @@
     .registration-form button:hover {
       background: #ff2e2e;
     }
+    /* 진행중인 외환상품 섹션 - 높이를 줄이기 위해 패딩과 마진을 줄임 */
     .ongoing-forex {
       background: #222;
-      padding: 40px 20px;
-      margin: 40px auto 0;
+      padding: 20px 20px;
+      margin: 20px auto 0;
       max-width: 1200px;
       border-radius: 12px;
       text-align: left;
@@ -435,11 +436,9 @@
     .ongoing-forex h2 {
       font-size: 28px;
       margin-bottom: 10px;
-      font-weight: bold;
-      color: #fff;
     }
     .ongoing-forex p.subtitle {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       font-size: 18px;
       color: #ccc;
     }
@@ -459,11 +458,11 @@
     }
     .forex-card img {
       width: 100%;
-      height: 200px; /* 모든 이미지 높이를 200px로 통일 */
+      height: 150px; /* 모든 이미지 높이를 150px로 통일 */
       object-fit: cover;
     }
     .forex-card .card-body {
-      padding: 20px;
+      padding: 8px;
     }
     .forex-card .card-body h3 {
       font-size: 20px;
@@ -509,15 +508,14 @@
       position: relative;
       overflow: hidden;
       padding: 20px 0;
-      margin-top: 30px;
     }
     .logo-track {
       display: flex;
-      gap: 60px;
+      gap: 50px;
       animation: scrollLeft 30s linear infinite;
     }
     .logo-track img {
-      height: 60px;
+      height: 20px;
       width: auto;
       object-fit: contain;
       transition: transform 0.3s;
@@ -798,7 +796,7 @@
       </div>
     </div>
     
-    <!-- 진행중인 외환상품 섹션 -->
+    <!-- 진행중인 외환상품 섹션 (높이 줄임) -->
     <div class="ongoing-forex">
       <h2>🎊 신년 지원금 이벤트를 놓치신 분들을 위한</h2>
       <p class="subtitle"><strong>2월 앵콜 소망이벤트</strong><br>이번엔 놓치지 마시고 꼭 챙겨가세요!</p>
