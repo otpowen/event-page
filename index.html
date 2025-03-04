@@ -109,6 +109,7 @@
     .hero-content {
       position: relative;
       z-index: 3;
+      padding: 0 20px;
     }
     .hero-content h1 {
       font-size: 52px;
@@ -548,7 +549,7 @@
       100% { transform: translateX(-50%); }
     }
     
-    /* 푸터 섹션 (원래 상태 복구) */
+    /* 푸터 섹션 */
     .business-footer {
       background: #222;
       padding: 40px 20px;
@@ -579,6 +580,75 @@
     .kakao-button img {
       width: 60%;
       height: auto;
+    }
+    
+    /* 반응형 미디어 쿼리 */
+    @media (max-width: 768px) {
+      .top-links ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+      }
+      .hero-content p {
+        font-size: 18px;
+      }
+      .hero-profile {
+        position: static;
+        margin-top: 20px;
+      }
+      .hero-profile img {
+        width: 150px;
+      }
+      .hero-scoreboard {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+      .prize-info h2 {
+        font-size: 28px;
+      }
+      .prize-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .info-container {
+        padding: 20px;
+        font-size: 16px;
+      }
+      .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+      }
+      .side-by-side {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .investment-info,
+      .registration-form {
+        max-width: 100%;
+      }
+      .ongoing-forex h2 {
+        font-size: 24px;
+      }
+      .forex-card {
+        width: 100%;
+        max-width: 320px;
+      }
+      .registration-form h2,
+      .investment-info h2 {
+        font-size: 24px;
+      }
+      /* 모바일에서 박스 크기를 일정하게 */
+      .prize-card,
+      .investment-info,
+      .registration-form,
+      .forex-card {
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   </style>
 </head>
@@ -839,11 +909,10 @@
       <img src="motion/SGX.png" alt="SGX" style="width:120px; height:120px;">
       <img src="motion/LSEG.png" alt="LSEG" style="width:120px; height:120px;">
       <img src="motion/bank of america.png" alt="Bank of America" style="width:120px; height:120px;">
-                  
     </div>
   </div>
   
-  <!-- 푸터 섹션 (원래 상태 복구) -->
+  <!-- 푸터 섹션 -->
   <footer class="business-footer fade-in">
     <div class="footer-business-info">
       <p>사업자 번호: 123-45-67890</p>
