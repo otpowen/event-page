@@ -20,12 +20,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px; /* 여백을 추가해 반응형에서도 보기 좋게 */
+      padding: 20px; /* 데스크탑 기본 여백 */
     }
     .container img {
       max-width: 100%;
       height: auto; /* 원본 비율 유지 */
       display: block;
+    }
+    /* 모바일 기기에서는 여백 제거 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0;
+      }
     }
   </style>
 </head>
