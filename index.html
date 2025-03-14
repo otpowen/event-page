@@ -12,6 +12,8 @@
     }
     body, html {
       width: 100%;
+      margin: 0;
+      padding: 0;
     }
     .container {
       width: 100%;
@@ -20,14 +22,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px; /* 데스크탑 기본 여백 */
+      padding: 0 20px; /* 좌우 여백만 적용, 상하 여백 제거 */
     }
     .container img {
       max-width: 100%;
       height: auto; /* 원본 비율 유지 */
       display: block;
     }
-    /* 모바일 기기에서는 여백 제거 */
+    /* 모바일 기기에서는 모든 여백 제거 */
     @media (max-width: 768px) {
       .container {
         padding: 0;
