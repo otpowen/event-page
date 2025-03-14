@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜딩페이지 (반응형, 이미지 잘리지 않음)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+      background-color: #f0f0f0;
+      /* 이미지 중앙 정렬을 위한 Flexbox */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px; /* 여백을 추가해 반응형에서도 보기 좋게 */
+    }
+    .container img {
+      max-width: 100%;
+      height: auto; /* 원본 비율 유지 */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="image/landing page.png" alt="랜딩페이지 이미지">
+  </div>
+</body>
+</html>
