@@ -118,7 +118,10 @@
 
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
-    <form action="https://formspree.io/f/xjkykjrb" method="POST">
+    <form action="https://formspree.io/f/xjkykjrb" method="POST" onsubmit="return validateForm()">
+      <!-- 제출 후 리다이렉트할 URL을 입력하세요 -->
+      <input type="hidden" name="_next" value="http://exchangekr.com/thanks">
+      
       <input type="text" name="name" placeholder="이름" required>
       <input type="tel" name="phone" placeholder="연락처" required>
       <textarea name="message" rows="4" placeholder="문의 내용을 입력하세요" required></textarea>
