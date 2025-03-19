@@ -59,8 +59,8 @@
     .checkbox-container label {
       display: inline-flex;
       align-items: center;
-      margin-left: 0px;
-      white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+      margin-left: 0;
+      white-space: nowrap;
     }
     .checkbox-container label input {
       margin: 0;
@@ -118,8 +118,9 @@
 
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
+    <!-- onsubmit 이벤트에 validateForm() 함수를 호출 -->
     <form action="https://formspree.io/f/xjkykjrb" method="POST" onsubmit="return validateForm()">
-      <!-- _next 필드를 폼 맨 위에 위치 -->
+      <!-- _next 필드를 맨 위에 위치 -->
       <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
       
       <input type="text" name="name" placeholder="이름" required>
@@ -154,9 +155,9 @@
       var checkbox = document.getElementById("privacyCheck");
       if (!checkbox.checked) {
         alert("개인정보 수집 및 이용에 동의해야 합니다.");
-        return false;
+        return false; // false 반환 시 제출이 중단됩니다.
       }
-      return true;
+      return true; // true 반환 시 폼 제출이 진행됩니다.
     }
   </script>
 </body>
