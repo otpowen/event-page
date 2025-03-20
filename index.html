@@ -118,11 +118,7 @@
 
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
-    <!-- onsubmit 이벤트에 validateForm() 함수를 호출 -->
-    <form action="https://formspree.io/f/xjkykjrb" method="POST" onsubmit="return validateForm()">
-      <!-- _next 필드를 맨 위에 위치 -->
-      <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
-      
+
       <input type="text" name="name" placeholder="이름" required>
       <input type="tel" name="phone" placeholder="연락처" required>
       <textarea name="message" rows="4" placeholder="문의 내용을 입력하세요" required></textarea>
