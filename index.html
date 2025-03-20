@@ -60,7 +60,7 @@
       display: inline-flex;
       align-items: center;
       margin-left: 0;
-      white-space: nowrap;
+      white-space: nowrap; /* 텍스트를 한 줄로 유지 */
     }
     .checkbox-container label input {
       margin: 0;
@@ -118,7 +118,13 @@
 
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
-
+    <!-- FormSubmit 엔드포인트 사용: 반드시 your_email@example.com 부분을 실제 이메일 주소로 수정 -->
+    <form action="https://formsubmit.co/your_email@example.com" method="POST" onsubmit="return validateForm()">
+      <!-- 리디렉션할 URL 지정 (폼 제출 후 해당 페이지로 이동) -->
+      <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
+      <!-- 제목 설정 (옵션) -->
+      <input type="hidden" name="_subject" value="새로운 이벤트 참여가 도착했습니다!">
+      
       <input type="text" name="name" placeholder="이름" required>
       <input type="tel" name="phone" placeholder="연락처" required>
       <textarea name="message" rows="4" placeholder="문의 내용을 입력하세요" required></textarea>
@@ -145,6 +151,15 @@
   <a href="https://your-kakao-consult-link.com" class="kakao-btn" target="_blank">
     <img src="image/icon/kakao.png" alt="카카오톡 상담">
   </a>
+
+  <script>
+    function validateForm() {
+      var checkbox = document.getElementById("privacyCheck");
+      if (!checkbox.checked) {
+        alert("개인정보 수집 및 이용에 동의해야 합니다.");
+        return false;
+      }
+      return true;
     }
   </script>
 </body>
