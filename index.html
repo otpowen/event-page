@@ -119,7 +119,7 @@
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
     <!-- FormSubmit 엔드포인트 사용: 반드시 otpowen1@gmail.com 부분을 실제 수신 이메일로 수정 -->
-    <form action="https://formsubmit.co/otpowen1@gmail.com" method="POST">
+    <form action="https://formsubmit.co/otpowen1@gmail.com" method="POST" onsubmit="return validateForm()">
       <!-- 폼 제출 후 리디렉션할 URL -->
       <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
       <!-- 이메일 제목 설정 (옵션) -->
