@@ -94,12 +94,10 @@
   <div class="contact-form">
     <h2>이벤트 참여하기</h2>
     <!-- Netlify Forms 활성화를 위한 data-netlify 및 폼 이름(hidden) 추가 -->
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return validateForm()">
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contact-form">
       <input type="hidden" name="form-name" value="contact">
       <!-- 봇 필드 (스팸 방지용, 선택사항) -->
       <input type="hidden" name="bot-field">
-      <!-- 폼 제출 후 리디렉션할 URL -->
-      <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
       
       <input type="text" name="name" placeholder="이름" required>
       <input type="tel" name="phone" placeholder="연락처" required>
@@ -137,6 +135,19 @@
       }
       return true;
     }
+
+    // 📌 폼 제출 후 강제 리디렉션 실행
+    document.querySelector("#contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();  // 기본 제출 방지
+      var formData = new FormData(event.target);
+
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      })
+      .then(() => window.location.href = "/thanks.html")  // 📌 성공하면 리디렉션
+      .catch((error) => console.error("폼 제출 오류:", error));
+    });
   </script>
 </body>
 </html>
