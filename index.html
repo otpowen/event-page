@@ -112,4 +112,55 @@
   </style>
 </head>
 <body>
-  <div 
+  <div class="container">
+    <img src="image/landing page.png" alt="랜딩페이지 이미지">
+  </div>
+
+  <div class="contact-form">
+    <h2>이벤트 참여하기</h2>
+    <!-- FormSubmit 엔드포인트를 무작위 문자열로 변경 -->
+    <form action="https://formsubmit.co/c28323f6bfcb71c68b299c96830bab10" method="POST" onsubmit="return validateForm()">
+      <!-- 폼 제출 후 리디렉션할 URL (Thanks 페이지) -->
+      <input type="hidden" name="_next" value="https://exchangekr.com/thanks.html">
+      <!-- 이메일 제목 설정 (옵션) -->
+      <input type="hidden" name="_subject" value="새로운 이벤트 참여가 도착했습니다!">
+      
+      <input type="text" name="name" placeholder="이름" required>
+      <input type="tel" name="phone" placeholder="연락처" required>
+      <textarea name="message" rows="4" placeholder="문의 내용을 입력하세요" required></textarea>
+      
+      <div class="checkbox-container">
+        <label for="privacyCheck">
+          <input type="checkbox" id="privacyCheck" required>개인정보수집동의
+        </label>
+      </div>
+      
+      <button type="submit">이벤트 접수</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>사업자등록번호: 123-45-67890</p>
+      <p>주소: 서울특별시 강남구</p>
+      <p>대표자: ABC</p>
+      <p>고객센터: 02-1234-5678</p>
+    </div>
+  </footer>
+
+  <a href="https://your-kakao-consult-link.com" class="kakao-btn" target="_blank">
+    <img src="image/icon/kakao.png" alt="카카오톡 상담">
+  </a>
+
+  <script>
+    function validateForm() {
+      var checkbox = document.getElementById("privacyCheck");
+      if (!checkbox.checked) {
+        alert("개인정보 수집 및 이용에 동의해야 합니다.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
